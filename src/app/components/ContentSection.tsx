@@ -1,10 +1,10 @@
-"use client"
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Button } from './ui/button';
-import { Badge } from './ui/badge';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { Check, ArrowRight, Play } from 'lucide-react';
+"use client";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { Button } from "./ui/button";
+import { Badge } from "./ui/badge";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { Check, ArrowRight, Play } from "lucide-react";
 
 export function ContentSection() {
   const ref = useRef(null);
@@ -14,45 +14,51 @@ export function ContentSection() {
     {
       badge: "Analytics",
       title: "Real-time insights that drive growth",
-      description: "Get actionable insights from your data with our advanced analytics dashboard. Track user behavior, monitor performance, and make data-driven decisions.",
+      description:
+        "Get actionable insights from your data with our advanced analytics dashboard. Track user behavior, monitor performance, and make data-driven decisions.",
       features: [
         "Live data visualization",
-        "Custom reporting tools", 
+        "Custom reporting tools",
         "Advanced filtering options",
-        "Export & sharing capabilities"
+        "Export & sharing capabilities",
       ],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       cta: "View Analytics",
-      reverse: false
+      reverse: false,
     },
     {
       badge: "Automation",
       title: "Automate your workflow like never before",
-      description: "Save time and reduce errors with intelligent automation. Set up custom workflows that adapt to your business needs and scale automatically.",
+      description:
+        "Save time and reduce errors with intelligent automation. Set up custom workflows that adapt to your business needs and scale automatically.",
       features: [
         "Smart trigger system",
         "Conditional logic builder",
         "Multi-step workflows",
-        "Integration marketplace"
+        "Integration marketplace",
       ],
-      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       cta: "Start Automating",
-      reverse: true
+      reverse: true,
     },
     {
       badge: "Collaboration",
       title: "Teams that work together, succeed together",
-      description: "Enhance team productivity with real-time collaboration tools. Share ideas, track progress, and achieve goals faster with seamless team integration.",
+      description:
+        "Enhance team productivity with real-time collaboration tools. Share ideas, track progress, and achieve goals faster with seamless team integration.",
       features: [
         "Real-time editing",
         "Comment & review system",
         "Task management",
-        "Video conferencing"
+        "Video conferencing",
       ],
-      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       cta: "Join Teams",
-      reverse: false
-    }
+      reverse: false,
+    },
   ];
 
   return (
@@ -64,7 +70,9 @@ export function ContentSection() {
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: index * 0.3 }}
-            className={`flex flex-col ${block.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-16`}
+            className={`flex flex-col ${
+              block.reverse ? "lg:flex-row-reverse" : "lg:flex-row"
+            } items-center gap-16`}
           >
             {/* Content */}
             <div className="flex-1 space-y-8">
@@ -96,7 +104,10 @@ export function ContentSection() {
                     key={feature}
                     initial={{ opacity: 0, x: block.reverse ? 30 : -30 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.4, delay: index * 0.3 + 0.6 + featureIndex * 0.1 }}
+                    transition={{
+                      duration: 0.4,
+                      delay: index * 0.3 + 0.6 + featureIndex * 0.1,
+                    }}
                     className="flex items-center space-x-3"
                   >
                     <div className="w-6 h-6 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
@@ -123,7 +134,10 @@ export function ContentSection() {
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </motion.div>
                 </Button>
-                <Button variant="outline" className="text-white border-slate-600 hover:bg-slate-800 group">
+                <Button
+                  variant="outline"
+                  className="text-white border-slate-600 hover:bg-slate-800 group"
+                >
                   <Play className="w-4 h-4 mr-2" />
                   Watch Demo
                 </Button>
@@ -154,27 +168,27 @@ export function ContentSection() {
 
                 {/* Floating Elements */}
                 <motion.div
-                  animate={{ 
+                  animate={{
                     y: [0, -10, 0],
-                    rotate: [0, 2, 0]
+                    rotate: [0, 2, 0],
                   }}
-                  transition={{ 
+                  transition={{
                     duration: 4,
                     repeat: Infinity,
-                    ease: "easeInOut"
+                    ease: "easeInOut",
                   }}
                   className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r from-purple-500/30 to-blue-500/30 rounded-full blur-xl"
                 />
                 <motion.div
-                  animate={{ 
+                  animate={{
                     y: [0, 15, 0],
-                    x: [0, -5, 0]
+                    x: [0, -5, 0],
                   }}
-                  transition={{ 
+                  transition={{
                     duration: 6,
                     repeat: Infinity,
                     ease: "easeInOut",
-                    delay: 1
+                    delay: 1,
                   }}
                   className="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full blur-xl"
                 />
@@ -185,7 +199,9 @@ export function ContentSection() {
                   animate={isInView ? { opacity: 1, y: 0, rotate: -5 } : {}}
                   transition={{ delay: index * 0.3 + 1 }}
                   whileHover={{ y: -5, rotate: 0 }}
-                  className={`absolute ${block.reverse ? '-left-8' : '-right-8'} bottom-8 bg-slate-800/90 backdrop-blur-lg border border-slate-600/50 rounded-xl p-4 shadow-xl`}
+                  className={`absolute ${
+                    block.reverse ? "-left-8" : "-right-8"
+                  } bottom-8 bg-slate-800/90 backdrop-blur-lg border border-slate-600/50 rounded-xl p-4 shadow-xl`}
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">

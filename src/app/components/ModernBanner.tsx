@@ -1,9 +1,9 @@
-"use client"
-import { motion } from 'framer-motion';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { Badge } from './ui/badge';
-import { Button } from './ui/button';
-import { ArrowRight, Play, Star, Users } from 'lucide-react';
+"use client";
+import { motion } from "framer-motion";
+import { ArrowRight, Play, Star, Users } from "lucide-react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
 
 export function ModernBanner() {
   return (
@@ -15,31 +15,31 @@ export function ModernBanner() {
     >
       {/* Animated gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 via-blue-900/20 to-cyan-900/30 opacity-60" />
-      
+
       {/* Floating elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          animate={{ 
+          animate={{
             y: [0, -20, 0],
-            rotate: [0, 5, 0]
+            rotate: [0, 5, 0],
           }}
-          transition={{ 
+          transition={{
             duration: 6,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
           className="absolute top-10 right-20 w-16 h-16 bg-purple-500/20 rounded-full blur-xl"
         />
         <motion.div
-          animate={{ 
+          animate={{
             y: [0, 20, 0],
-            x: [0, 10, 0]
+            x: [0, 10, 0],
           }}
-          transition={{ 
+          transition={{
             duration: 8,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 2
+            delay: 2,
           }}
           className="absolute bottom-20 left-20 w-24 h-24 bg-blue-500/20 rounded-full blur-xl"
         />
@@ -75,8 +75,8 @@ export function ModernBanner() {
               </span>
             </h1>
             <p className="text-xl text-slate-300 max-w-2xl leading-relaxed">
-              Discover the next generation of web applications with cutting-edge design, 
-              seamless animations, and unparalleled user experience.
+              Discover the next generation of web applications with cutting-edge
+              design, seamless animations, and unparalleled user experience.
             </p>
           </motion.div>
 
@@ -108,7 +108,7 @@ export function ModernBanner() {
             transition={{ delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
-            <Button 
+            <Button
               size="lg"
               className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0 px-8 py-6 text-lg group"
             >
@@ -120,7 +120,7 @@ export function ModernBanner() {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </motion.div>
             </Button>
-            
+
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -141,7 +141,7 @@ export function ModernBanner() {
             <Users className="w-5 h-5 text-slate-400" />
             <span className="text-slate-400">Trusted by teams at</span>
             <div className="flex items-center gap-4 ml-2">
-              {['Google', 'Microsoft', 'Apple'].map((company, index) => (
+              {["Google", "Microsoft", "Apple"].map((company) => (
                 <span key={company} className="text-slate-300 opacity-60">
                   {company}
                 </span>
@@ -210,20 +210,27 @@ export function ModernBanner() {
       </div>
 
       {/* Animated border */}
-      <div 
-        className="absolute inset-0 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" 
+      <div
+        className="absolute inset-0 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{
-          background: 'linear-gradient(45deg, transparent, rgba(139, 92, 246, 0.1), transparent, rgba(59, 130, 246, 0.1), transparent)',
-          backgroundSize: '200% 200%',
-          animation: 'gradient 4s ease infinite'
-        }} 
+          background:
+            "linear-gradient(45deg, transparent, rgba(139, 92, 246, 0.1), transparent, rgba(59, 130, 246, 0.1), transparent)",
+          backgroundSize: "200% 200%",
+          animation: "gradient 4s ease infinite",
+        }}
       />
-      
+
       <style jsx>{`
         @keyframes gradient {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
         }
       `}</style>
     </motion.div>

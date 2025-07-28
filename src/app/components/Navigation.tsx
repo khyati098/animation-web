@@ -1,18 +1,18 @@
-"use client"
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { Button } from './ui/button';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import { useState, useEffect } from 'react';
+"use client";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Button } from "./ui/button";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { scrollY } = useScroll();
-  
+
   const backgroundColor = useTransform(
     scrollY,
     [0, 100],
-    ['rgba(15, 23, 42, 0.1)', 'rgba(15, 23, 42, 0.95)']
+    ["rgba(15, 23, 42, 0.1)", "rgba(15, 23, 42, 0.95)"]
   );
 
   useEffect(() => {
@@ -23,18 +23,18 @@ export function Navigation() {
   }, [scrollY]);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Features', href: '#features' },
-    { name: 'About', href: '#about' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' }
+    { name: "Home", href: "#home" },
+    { name: "Features", href: "#features" },
+    { name: "About", href: "#about" },
+    { name: "Testimonials", href: "#testimonials" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
     <motion.nav
       style={{ backgroundColor }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'backdrop-blur-lg border-b border-slate-700/50' : ''
+        isScrolled ? "backdrop-blur-lg border-b border-slate-700/50" : ""
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -85,7 +85,10 @@ export function Navigation() {
             transition={{ delay: 0.5 }}
             className="hidden md:flex items-center space-x-4"
           >
-            <Button variant="outline" className="text-white border-slate-600 hover:bg-slate-800">
+            <Button
+              variant="outline"
+              className="text-white border-slate-600 hover:bg-slate-800"
+            >
               Sign In
             </Button>
             <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
@@ -109,9 +112,9 @@ export function Navigation() {
       {/* Mobile Navigation */}
       <motion.div
         initial={{ opacity: 0, height: 0 }}
-        animate={{ 
+        animate={{
           opacity: isOpen ? 1 : 0,
-          height: isOpen ? 'auto' : 0
+          height: isOpen ? "auto" : 0,
         }}
         transition={{ duration: 0.3 }}
         className="md:hidden bg-slate-900/95 backdrop-blur-lg border-t border-slate-700/50 overflow-hidden"
@@ -122,9 +125,9 @@ export function Navigation() {
               key={item.name}
               href={item.href}
               initial={{ opacity: 0, x: -20 }}
-              animate={{ 
+              animate={{
                 opacity: isOpen ? 1 : 0,
-                x: isOpen ? 0 : -20
+                x: isOpen ? 0 : -20,
               }}
               transition={{ delay: index * 0.1 }}
               onClick={() => setIsOpen(false)}
@@ -134,7 +137,10 @@ export function Navigation() {
             </motion.a>
           ))}
           <div className="pt-4 space-y-3">
-            <Button variant="outline" className="w-full text-white border-slate-600">
+            <Button
+              variant="outline"
+              className="w-full text-white border-slate-600"
+            >
               Sign In
             </Button>
             <Button className="w-full bg-gradient-to-r from-purple-600 to-blue-600">

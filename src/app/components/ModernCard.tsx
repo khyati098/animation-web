@@ -1,9 +1,9 @@
-"use client"
-import { motion } from 'framer-motion';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { Badge } from './ui/badge';
-import { Button } from './ui/button';
-import { Heart, MessageCircle, Share } from 'lucide-react';
+"use client";
+import { motion } from "framer-motion";
+import { Heart, MessageCircle, Share } from "lucide-react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
 
 export function ModernCard() {
   return (
@@ -16,7 +16,7 @@ export function ModernCard() {
     >
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20 pointer-events-none" />
-      
+
       {/* Header Image */}
       <div className="relative h-48 overflow-hidden">
         <ImageWithFallback
@@ -25,7 +25,7 @@ export function ModernCard() {
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
-        
+
         {/* Status Badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -70,7 +70,8 @@ export function ModernCard() {
         >
           <h2 className="text-xl text-white mb-2">Cosmic Abstractions</h2>
           <p className="text-slate-300 text-sm leading-relaxed">
-            Exploring the intersection of technology and art through generative algorithms and digital creativity.
+            Exploring the intersection of technology and art through generative
+            algorithms and digital creativity.
           </p>
         </motion.div>
 
@@ -125,7 +126,7 @@ export function ModernCard() {
               <Share className="w-4 h-4" />
             </motion.button>
           </div>
-          
+
           <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0 px-6">
             Follow
           </Button>
@@ -133,13 +134,16 @@ export function ModernCard() {
       </div>
 
       {/* Animated border */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-purple-500/20 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none" 
-           style={{
-             background: 'linear-gradient(45deg, transparent, rgba(139, 92, 246, 0.1), transparent, rgba(59, 130, 246, 0.1), transparent)',
-             backgroundSize: '200% 200%',
-             animation: 'gradient 3s ease infinite'
-           }} />
-      
+      <div
+        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-purple-500/20 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(45deg, transparent, rgba(139, 92, 246, 0.1), transparent, rgba(59, 130, 246, 0.1), transparent)",
+          backgroundSize: "200% 200%",
+          animation: "gradient 3s ease infinite",
+        }}
+      />
+
       <style>{`
         @keyframes gradient {
           0% { background-position: 0% 50%; }

@@ -1,10 +1,10 @@
-"use client"
-import { motion, useInView, AnimatePresence } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
-import { Card, CardContent } from './ui/card';
-import { Badge } from './ui/badge';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
+"use client";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { Card, CardContent } from "./ui/card";
+import { Badge } from "./ui/badge";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
 
 export function TestimonialsSection() {
   const ref = useRef(null);
@@ -16,42 +16,46 @@ export function TestimonialsSection() {
       id: 1,
       name: "Sarah Chen",
       title: "CTO at TechFlow",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b647?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1494790108755-2616b612b647?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
       company: "TechFlow",
       rating: 5,
       text: "This platform completely transformed our development workflow. We shipped 40% faster and our team productivity skyrocketed. The AI-powered features are game-changing.",
-      metrics: { value: "40%", label: "Faster deployment" }
+      metrics: { value: "40%", label: "Faster deployment" },
     },
     {
       id: 2,
       name: "Marcus Rodriguez",
       title: "Lead Developer at InnovateCorp",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
       company: "InnovateCorp",
       rating: 5,
       text: "The best investment we made this year. The automation features saved us countless hours, and the analytics gave us insights we never had before. Simply outstanding.",
-      metrics: { value: "200+", label: "Hours saved monthly" }
+      metrics: { value: "200+", label: "Hours saved monthly" },
     },
     {
       id: 3,
       name: "Emily Watson",
       title: "Product Manager at StartupLab",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
       company: "StartupLab",
       rating: 5,
       text: "Our team collaboration improved dramatically. The real-time features and intuitive interface made remote work seamless. Couldn't imagine working without it now.",
-      metrics: { value: "95%", label: "Team satisfaction" }
+      metrics: { value: "95%", label: "Team satisfaction" },
     },
     {
       id: 4,
       name: "David Kim",
       title: "Engineering Director at CloudSystems",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
       company: "CloudSystems",
       rating: 5,
       text: "Security was our biggest concern, but this platform exceeded all expectations. Enterprise-grade security with zero compromises on usability. Perfect for our needs.",
-      metrics: { value: "Zero", label: "Security incidents" }
-    }
+      metrics: { value: "Zero", label: "Security incidents" },
+    },
   ];
 
   useEffect(() => {
@@ -66,11 +70,16 @@ export function TestimonialsSection() {
   };
 
   const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+    );
   };
 
   return (
-    <section ref={ref} className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-950 overflow-hidden">
+    <section
+      ref={ref}
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-950 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -89,7 +98,8 @@ export function TestimonialsSection() {
             </span>
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Join thousands of teams who have transformed their workflow with our platform.
+            Join thousands of teams who have transformed their workflow with our
+            platform.
           </p>
         </motion.div>
 
@@ -123,7 +133,7 @@ export function TestimonialsSection() {
                         >
                           <Quote className="w-8 h-8 text-purple-400 mb-4" />
                           <p className="text-xl text-slate-200 leading-relaxed">
-                            "{testimonials[currentIndex].text}"
+                            &ldquo;{testimonials[currentIndex].text}&rdquo;
                           </p>
                         </motion.div>
 
@@ -134,16 +144,18 @@ export function TestimonialsSection() {
                           transition={{ delay: 0.4 }}
                           className="flex items-center gap-1 mb-6"
                         >
-                          {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                            <motion.div
-                              key={i}
-                              initial={{ opacity: 0, scale: 0 }}
-                              animate={{ opacity: 1, scale: 1 }}
-                              transition={{ delay: 0.5 + i * 0.1 }}
-                            >
-                              <Star className="w-5 h-5 text-yellow-400 fill-current" />
-                            </motion.div>
-                          ))}
+                          {[...Array(testimonials[currentIndex].rating)].map(
+                            (_, i) => (
+                              <motion.div
+                                key={i}
+                                initial={{ opacity: 0, scale: 0 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.5 + i * 0.1 }}
+                              >
+                                <Star className="w-5 h-5 text-yellow-400 fill-current" />
+                              </motion.div>
+                            )
+                          )}
                         </motion.div>
 
                         {/* Author */}
@@ -162,7 +174,9 @@ export function TestimonialsSection() {
                             <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-slate-800" />
                           </div>
                           <div>
-                            <div className="text-white">{testimonials[currentIndex].name}</div>
+                            <div className="text-white">
+                              {testimonials[currentIndex].name}
+                            </div>
                             <div className="text-slate-400 text-sm">
                               {testimonials[currentIndex].title}
                             </div>
@@ -218,9 +232,9 @@ export function TestimonialsSection() {
                   whileHover={{ scale: 1.2 }}
                   onClick={() => setCurrentIndex(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex 
-                      ? 'bg-gradient-to-r from-purple-600 to-blue-600' 
-                      : 'bg-slate-600'
+                    index === currentIndex
+                      ? "bg-gradient-to-r from-purple-600 to-blue-600"
+                      : "bg-slate-600"
                   }`}
                 />
               ))}
@@ -248,7 +262,7 @@ export function TestimonialsSection() {
             { value: "10,000+", label: "Happy Customers" },
             { value: "99.9%", label: "Uptime" },
             { value: "50M+", label: "API Calls/Month" },
-            { value: "24/7", label: "Support" }
+            { value: "24/7", label: "Support" },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -257,7 +271,9 @@ export function TestimonialsSection() {
               transition={{ delay: 1.2 + index * 0.1 }}
               className="text-center"
             >
-              <div className="text-2xl lg:text-3xl text-white mb-2">{stat.value}</div>
+              <div className="text-2xl lg:text-3xl text-white mb-2">
+                {stat.value}
+              </div>
               <div className="text-slate-400">{stat.label}</div>
             </motion.div>
           ))}

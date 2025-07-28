@@ -1,43 +1,49 @@
-"use client"
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Button } from './ui/button';
-import { Badge } from './ui/badge';
-import { Separator } from './ui/separator';
-import { Github, Twitter, Linkedin, Mail, ArrowUp } from 'lucide-react';
+"use client";
+import { motion, useInView } from "framer-motion";
+import { ArrowUp, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { useRef } from "react";
+import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
+import { Separator } from "./ui/separator";
 
 export function Footer() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const footerSections = [
     {
       title: "Product",
-      links: ["Features", "Pricing", "API Docs", "Integrations", "Changelog"]
+      links: ["Features", "Pricing", "API Docs", "Integrations", "Changelog"],
     },
     {
-      title: "Company", 
-      links: ["About", "Blog", "Careers", "Press", "Partners"]
+      title: "Company",
+      links: ["About", "Blog", "Careers", "Press", "Partners"],
     },
     {
       title: "Resources",
-      links: ["Documentation", "Help Center", "Community", "Status", "Security"]
+      links: [
+        "Documentation",
+        "Help Center",
+        "Community",
+        "Status",
+        "Security",
+      ],
     },
     {
       title: "Legal",
-      links: ["Privacy", "Terms", "Cookies", "Licenses", "GDPR"]
-    }
+      links: ["Privacy", "Terms", "Cookies", "Licenses", "GDPR"],
+    },
   ];
 
   const socialLinks = [
     { icon: Github, href: "#", label: "GitHub" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Mail, href: "#", label: "Email" }
+    { icon: Mail, href: "#", label: "Email" },
   ];
 
   return (
@@ -57,13 +63,21 @@ export function Footer() {
             Transform your workflow today
           </h3>
           <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-            Join thousands of teams already using our platform to build amazing applications.
+            Join thousands of teams already using our platform to build amazing
+            applications.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+            >
               Start Free Trial
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-slate-600 hover:bg-slate-800">
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-white border-slate-600 hover:bg-slate-800"
+            >
               Contact Sales
             </Button>
           </div>
@@ -88,7 +102,8 @@ export function Footer() {
                 <span className="text-xl text-white">Animexa</span>
               </div>
               <p className="text-slate-400 mb-6 max-w-sm">
-                Building the future of web applications with cutting-edge technology and beautiful design.
+                Building the future of web applications with cutting-edge
+                technology and beautiful design.
               </p>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
@@ -124,10 +139,12 @@ export function Footer() {
                       key={link}
                       initial={{ opacity: 0, x: -10 }}
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ delay: 0.5 + sectionIndex * 0.1 + linkIndex * 0.05 }}
+                      transition={{
+                        delay: 0.5 + sectionIndex * 0.1 + linkIndex * 0.05,
+                      }}
                     >
-                      <a 
-                        href="#" 
+                      <a
+                        href="#"
                         className="text-slate-400 hover:text-white transition-colors duration-200"
                       >
                         {link}

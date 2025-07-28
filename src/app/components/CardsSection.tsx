@@ -1,28 +1,30 @@
-"use client"
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Badge } from './ui/badge';
-import { Button } from './ui/button';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { 
-  Zap, 
-  Shield, 
-  Sparkles, 
-  Rocket, 
-  Globe, 
-  Users, 
-  ArrowRight, 
-  TrendingUp,
+"use client";
+import { motion, useInView } from "framer-motion";
+import {
+  ArrowRight,
   Clock,
-  Star
-} from 'lucide-react';
+  Globe,
+  Rocket,
+  Shield,
+  Sparkles,
+  TrendingUp,
+  Users,
+  Zap,
+} from "lucide-react";
+import { useRef } from "react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
 
 export function CardsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section ref={ref} className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-950 to-slate-900">
+    <section
+      ref={ref}
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-950 to-slate-900"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -41,7 +43,8 @@ export function CardsSection() {
             </span>
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Powerful features designed to accelerate your development workflow and deliver exceptional user experiences.
+            Powerful features designed to accelerate your development workflow
+            and deliver exceptional user experiences.
           </p>
         </motion.div>
 
@@ -64,7 +67,7 @@ export function CardsSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent" />
               </div>
-              
+
               <div className="relative h-full p-8 flex flex-col justify-between">
                 <div>
                   <motion.div
@@ -73,14 +76,17 @@ export function CardsSection() {
                   >
                     <Sparkles className="w-8 h-8 text-white" />
                   </motion.div>
-                  
-                  <h3 className="text-3xl text-white mb-4">AI-Powered Development</h3>
+
+                  <h3 className="text-3xl text-white mb-4">
+                    AI-Powered Development
+                  </h3>
                   <p className="text-slate-300 text-lg mb-6 leading-relaxed">
-                    Harness the power of artificial intelligence to automate repetitive tasks, 
-                    generate code snippets, and optimize your workflow with smart suggestions.
+                    Harness the power of artificial intelligence to automate
+                    repetitive tasks, generate code snippets, and optimize your
+                    workflow with smart suggestions.
                   </p>
                 </div>
-                
+
                 <div className="space-y-4">
                   <div className="flex items-center gap-4 text-sm text-slate-400">
                     <div className="flex items-center gap-2">
@@ -92,7 +98,7 @@ export function CardsSection() {
                       <span>Smart Code Gen</span>
                     </div>
                   </div>
-                  
+
                   <Button className="bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 group">
                     Explore AI Features
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -112,7 +118,7 @@ export function CardsSection() {
           >
             <div className="h-full bg-gradient-to-br from-emerald-600/20 to-teal-600/20 backdrop-blur-lg border border-emerald-500/30 rounded-2xl p-6 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-full -translate-y-10 translate-x-10" />
-              
+
               <div className="relative">
                 <Zap className="w-8 h-8 text-emerald-400 mb-4" />
                 <h4 className="text-white text-xl mb-2">Lightning Fast</h4>
@@ -126,9 +132,9 @@ export function CardsSection() {
                     <span className="text-emerald-400">98/100</span>
                   </div>
                   <div className="w-full bg-slate-700/50 rounded-full h-2">
-                    <motion.div 
+                    <motion.div
                       initial={{ width: 0 }}
-                      animate={isInView ? { width: '98%' } : {}}
+                      animate={isInView ? { width: "98%" } : {}}
                       transition={{ duration: 1, delay: 0.5 }}
                       className="bg-gradient-to-r from-emerald-500 to-teal-500 h-2 rounded-full"
                     />
@@ -148,7 +154,7 @@ export function CardsSection() {
           >
             <div className="h-full bg-gradient-to-br from-blue-600/20 to-cyan-600/20 backdrop-blur-lg border border-blue-500/30 rounded-2xl p-6 relative overflow-hidden">
               <div className="absolute -bottom-10 -right-10 w-20 h-20 bg-gradient-to-tl from-blue-500/20 to-transparent rounded-full" />
-              
+
               <div className="relative">
                 <Shield className="w-8 h-8 text-blue-400 mb-4" />
                 <h4 className="text-white text-xl mb-2">Enterprise Security</h4>
@@ -157,7 +163,9 @@ export function CardsSection() {
                 </p>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                  <span className="text-green-400 text-sm">Actively Protected</span>
+                  <span className="text-green-400 text-sm">
+                    Actively Protected
+                  </span>
                 </div>
               </div>
             </div>
@@ -173,7 +181,7 @@ export function CardsSection() {
           >
             <div className="h-full bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-lg border border-slate-600/50 rounded-2xl p-6 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-blue-600" />
-              
+
               <div className="flex items-center justify-between">
                 <div>
                   <div className="flex items-center gap-3 mb-2">
@@ -183,7 +191,7 @@ export function CardsSection() {
                   <p className="text-slate-300 text-sm mb-4">
                     Join thousands of developers building the future
                   </p>
-                  
+
                   <div className="flex items-center gap-6">
                     <div>
                       <div className="text-2xl text-white">50K+</div>
@@ -199,7 +207,7 @@ export function CardsSection() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="flex -space-x-2">
                   {[1, 2, 3, 4].map((i) => (
                     <motion.div
@@ -210,7 +218,9 @@ export function CardsSection() {
                       className="w-10 h-10 rounded-full border-2 border-slate-700 overflow-hidden"
                     >
                       <ImageWithFallback
-                        src={`https://images.unsplash.com/photo-${1500000000000 + i * 100000000}?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80`}
+                        src={`https://images.unsplash.com/photo-${
+                          1500000000000 + i * 100000000
+                        }?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80`}
                         alt={`User ${i}`}
                         className="w-full h-full object-cover"
                       />
@@ -231,7 +241,7 @@ export function CardsSection() {
           >
             <div className="h-full bg-gradient-to-br from-orange-600/20 to-red-600/20 backdrop-blur-lg border border-orange-500/30 rounded-2xl p-6 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-orange-500/20 to-transparent rounded-full -translate-y-8 translate-x-8" />
-              
+
               <div className="relative">
                 <Rocket className="w-8 h-8 text-orange-400 mb-4" />
                 <h4 className="text-white text-xl mb-2">Rapid Deploy</h4>
@@ -256,7 +266,7 @@ export function CardsSection() {
           >
             <div className="h-full bg-gradient-to-br from-indigo-600/20 to-purple-600/20 backdrop-blur-lg border border-indigo-500/30 rounded-2xl p-6 relative overflow-hidden">
               <div className="absolute -bottom-8 -left-8 w-16 h-16 bg-gradient-to-tr from-indigo-500/20 to-transparent rounded-full" />
-              
+
               <div className="relative">
                 <Globe className="w-8 h-8 text-indigo-400 mb-4" />
                 <h4 className="text-white text-xl mb-2">Global Scale</h4>
@@ -279,7 +289,10 @@ export function CardsSection() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white group">
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white group"
+          >
             Start Building Today
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
